@@ -1,0 +1,8 @@
+******
+**  remove this and place in correct path
+**** this setup has it set to c:\TEMP\ext_table\bin
+**** also change to bat file
+**** create cron to fire this off within 30 minute intervals
+@echo off
+C:\Users\cccsat1ixr\Downloads\curl-7.33.0-win64-ssl-sspi\curl -k -d "grant_type=client_credentials&client_id=<CLIENT_IDHERE>&client_secret=<CLIENT_SECRET_HERE>" "https://api.gettyimages.com/oauth2/token" > c:\temp\ext_table\tokens1.txt
+C:\Users\cccsat1ixr\Downloads\curl-7.33.0-win64-ssl-sspi\curl -k -d "grant_type=client_credentials&client_id=<CLIENT_ID_HERE>&client_secret=<CLIENT_SECRET_HERE>" "https://api.gettyimages.com/oauth2/token" > c:\temp\ext_table\tokens2.txt

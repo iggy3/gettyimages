@@ -1,0 +1,47 @@
+CREATE OR REPLACE TRIGGER  "GETTY_EPS_IMAGES_BLOB_TR" before
+insert on getty_eps_images_blob
+REFERENCING NEW as NEW OLD as OLD
+FOR EACH ROW
+BEGIN
+    select getty_eps_images_blob_sq.NEXTVAL
+    INTO :NEW.id
+    FROM dual;
+END;
+/
+ALTER TRIGGER  "GETTY_EPS_IMAGES_BLOB_TR" ENABLE
+/
+CREATE OR REPLACE TRIGGER  "GETTY_IAMGES_RUN_HISTORY_TR" before insert on getty_images_run_history
+     referencing NEW as NEW OLD as OLD
+     for each row
+     BEGIN
+          select getty_images_run_history_sq.nextval
+          into :NEW.id
+          from dual;
+     END;
+/
+ALTER TRIGGER  "GETTY_IAMGES_RUN_HISTORY_TR" ENABLE
+/
+CREATE OR REPLACE TRIGGER  "GETTY_IMAGES_BLOB_TR" before insert on getty_images_blob
+REFERENCING NEW as NEW OLD as OLD
+FOR EACH ROW
+BEGIN
+    select getty_images_blob_sq.NEXTVAL
+    INTO :NEW.id
+    FROM dual;
+END;
+/
+ALTER TRIGGER  "GETTY_IMAGES_BLOB_TR" ENABLE
+/
+CREATE OR REPLACE TRIGGER  "GETTY_IPTC_COMMANDS_TR" before insert on getty_iptc_commands
+referencing NEW as NEW OLD as OLD
+for each row
+BEGIN
+    select getty_iptc_commands_sq.NEXTVAL
+ 	INTO :NEW.ID
+  	FROM dual;
+END;
+/
+ALTER TRIGGER  "GETTY_IPTC_COMMANDS_TR" ENABLE
+/
+
+
